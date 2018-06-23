@@ -1,0 +1,49 @@
+Running ClausIE
+
+1. Unzip the content of the ".zip" file into a directory
+
+2. Run
+# clausie.sh [options]
+
+OPTIONS 
+
+-f
+    	Input file (if absent, ClausIE reads from stdin), the file must contain one sentence per line.
+-l
+    	if set, sentence identifier is read from input file (with lines of form: [id]\\t[sentence]).
+-o
+    	Output file (if absent, ClausIE writes to stdout).
+-c
+    	Configuration file.
+-v
+    	verbose output.
+-h
+    	print help.
+-s
+    	print sentence.
+-p
+    	print sentence confidence. 
+
+EXAMPLE 1 -- Shell script
+
+# clausie.sh -vlf /data/sentences-test.txt -o /tmp/sentences-test-out.txt
+
+EXAMPLE 2 -- Java .jar
+
+# java -jar clausie.jar -vlf /data/sentences-test.txt -o /tmp/sentences-test-out.txt
+
+EXAMPLE 3 -- Input sentences in command line
+
+# clausie.sh -v 
+# type a sentence 
+
+or 
+
+# java -jar clausie.jar -v
+# type a sentence 
+
+EXAMPLE 4 -- Input a sentence in src/Example.java 
+
+Define a sentence in the code as: 
+
+String sentence = "This is an example sentence"; 
