@@ -1,3 +1,9 @@
+MODIFICATION MADE by JMR (https://scholar.google.com/citations?user=VSRKO3EAAAAJ&hl=es)
+
+A new function was added to ClausIE to split each input text into independent sentences.
+more information in the publication here: https://dl.acm.org/citation.cfm?id=3184099
+
+
 CONTENTS (VERSION 0.0.1)
 
 -data/ : A set of test sentences

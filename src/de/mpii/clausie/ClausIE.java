@@ -107,6 +107,7 @@ public class ClausIE {
 		lpq.parse(tokenizedSentence); // what about the confidence?
 		depTree = lpq.getBestParse();
 		this.semanticGraph = ParserAnnotatorUtils.generateUncollapsedDependencies(this.depTree);
+		//System.out.println(this.semanticGraph.toString());
 	}
 
 	/** Returns the constituent tree for the sentence. */
