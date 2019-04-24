@@ -1,20 +1,41 @@
-MODIFICATION MADE by JMR (https://scholar.google.com/citations?user=VSRKO3EAAAAJ&hl=es)
+# ClausIE (with split paragraph into sentences)
 
-A new function was added to ClausIE to split each input text into independent sentences.
-more information in the publication here: https://dl.acm.org/citation.cfm?id=3184099
+ClausIE is a Open Information Extraction. It allows to extract semantic relations from texts in english.
+You can find more information here: https://scholar.google.com.ar/scholar?hl=es&as_sdt=0%2C5&q=ClausIE+Del+Corro&btnG=
+ClausIE process texts like this: "Albert Einstein was awarded the Nobel Prize in Sweden in 1921." and returns tuples like:
+	 		("Albert Einstein", "was awarded", "the Nobel Prize")
+			("Albert Einstein", "was awarded", "in Sweden")
+			("Albert Einstein", "was awarded", "in 1921")
 
+This version has a modification made by me (https://scholar.google.com/citations?user=VSRKO3EAAAAJ&hl=es).
+This modification allows ClausIE to split each input text into independent sentences.
+The modification was presented in the following article: https://dl.acm.org/citation.cfm?id=3184099 
 
-CONTENTS (VERSION 0.0.1)
+## Getting Started
+
+Download the file in dist and the files in clausie_lib. Run with the following command:
+
+java -jar clausie.jar -j -f /data/sentences-test.txt -o /tmp/sentences-test-out.txt
+
+for more options you can check the file: clauseIE_tutorial.txt
+
+### content
 
 -data/ : A set of test sentences
 -clausie_lib/: A set of libraries used by clausie
 -src/: Clausie source code
 -clausie.jar: A runnable .jar file
 
-LICENSE
+## Authors
+
+**Luciano Del Corro** -  *Initial work*
+**Rainer Gemulla** -  *Initial work*
+
+## License
 
 * Clausie is distributed under the Attribution-ShareAlike (ver. 3.0 or later) [http://creativecommons.org/licenses/by-sa/3.0/legalcode]
 
 * This distribution includes libraries of the Stanford Parser v. 2.0.5 [http://www-nlp.stanford.edu/software/lex-parser.shtml] which is licensed under the GNU General Public License (v2 or later) [http://www.gnu.org/licenses/gpl-2.0.html]
 
 As explained in the respective license codes both Clausie and the Stanford Parser come with absolutely no warranty.
+

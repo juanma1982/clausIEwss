@@ -24,6 +24,9 @@ OPTIONS
 -p
     	print sentence confidence. 
 
+-j
+		split one paragraph (without line breaks) into separate sentences. This is the main modification, with respect to the original ClausIE.
+
 EXAMPLE 1 -- Shell script
 
 # clausie.sh -vlf /data/sentences-test.txt -o /tmp/sentences-test-out.txt
@@ -33,6 +36,10 @@ EXAMPLE 2 -- Java .jar
 # java -jar clausie.jar -vlf /data/sentences-test.txt -o /tmp/sentences-test-out.txt
 
 EXAMPLE 3 -- Input sentences in command line
+
+EXAMPLE 4 -- split paragraph into sentences
+
+java -jar clausie.jar -j -f /data/sentences-test.txt -o /tmp/sentences-test-out.txt
 
 # clausie.sh -v 
 # type a sentence 
