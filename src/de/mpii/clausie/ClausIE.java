@@ -2,6 +2,7 @@ package de.mpii.clausie;
 
 import java.io.DataInput;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,6 +10,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.StringReader;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,14 +99,20 @@ public class ClausIE {
 	/** Initializes the Stanford parser. */
 	public void initParser() {		
 		lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
-		tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(), ""); //TODO: JMR : check in the future for chage to spanish 
+		try {
+			URLClassLoader loader1 = new URLClassLoader(new URL[] {new File("stanford-parser.jar").toURL()}, Thread.currentThread().getContextClassLoader());
+			Class<?> c1 = loader1.loadClass("edu.stanford.nlp.process.PTBTokenizer");
+		}catch (Exception e) {
+				e.printStackTrace();
+		}
+		tokenizerFactory = edu.stanford.nlp.process.PTBTokenizer.factory(new CoreLabelTokenFactory(), ""); 
 		lpq = this.lp.parserQuery();
 	}
 
 	/** Clears and parses a new sentence. */
 	public void parse(String sentence) {
 		clear();
-		List<CoreLabel> tokenizedSentence = tokenizerFactory.getTokenizer(new StringReader(sentence)).tokenize(); //TODO: JMR: check in the future for chage to spanish 
+		List<CoreLabel> tokenizedSentence = tokenizerFactory.getTokenizer(new StringReader(sentence)).tokenize(); 
 		lpq.parse(tokenizedSentence); // what about the confidence?
 		depTree = lpq.getBestParse();
 		this.semanticGraph = ParserAnnotatorUtils.generateUncollapsedDependencies(this.depTree);
