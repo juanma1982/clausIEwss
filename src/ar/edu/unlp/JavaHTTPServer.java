@@ -107,27 +107,28 @@ public class JavaHTTPServer implements Runnable{
 				
 			} else {
 				// GET or HEAD method
-				if (fileRequested.endsWith("/")) {
+				/*if (fileRequested.endsWith("/")) {
 					fileRequested += DEFAULT_FILE;
 				}
 				
 				File file = new File(WEB_ROOT, fileRequested);
 				int fileLength = (int) file.length();
-				String content = getContentType(fileRequested);
+				String content = getContentType(fileRequested);*/
 				
 				if (method.equals("GET")) { // GET method so we return content
-					byte[] fileData = readFileData(file, fileLength);
+					//byte[] fileData = readFileData(file, fileLength);
 					
 					// send HTTP Headers
 					out.println("HTTP/1.1 200 OK");
 					out.println("Server: Java HTTP Server from SSaurel : 1.0");
 					out.println("Date: " + new Date());
-					out.println("Content-type: " + content);
-					out.println("Content-length: " + fileLength);
+					out.println("Content-type: " +  "text/plain");
+					//out.println("Content-length: " + fileLength);
 					out.println(); // blank line between headers and content, very important !
-					out.flush(); // flush character output stream buffer
-					
+				
+					out.println("Ilive");
 					//dataOut.write(fileData, 0, fileLength);
+					out.flush(); // flush character output stream buffer
 					dataOut.flush();
 					
 				}else if (method.equals("POST")) {
@@ -169,9 +170,9 @@ public class JavaHTTPServer implements Runnable{
 				    }
 				}
 				
-				if (verbose) {
+				/*if (verbose) {
 					System.out.println("File " + fileRequested + " of type " + content + " returned");
-				}
+				}*/
 				
 			}
 			
