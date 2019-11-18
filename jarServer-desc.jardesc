@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="clausIE-splitIntoSentences/dist/clausieServer.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/clausIE-splitIntoSentences/jarServer-desc.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/clausIE-splitIntoSentences/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/clausIE-splitIntoSentences/README"/>
+        <javaElement handleIdentifier="=clausIE-splitIntoSentences/src"/>
+        <file path="/clausIE-splitIntoSentences/clausie_license.html"/>
+        <file path="/clausIE-splitIntoSentences/Stanford_Parser_License.html"/>
+        <file path="/clausIE-splitIntoSentences/clauseIE_tutorial.txt"/>
+    </selectedElements>
+</jardesc>

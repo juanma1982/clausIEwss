@@ -1,0 +1,4 @@
+Manifest-Version: 1.1
+Class-Path: . clausie_lib/stanford-parser.jar clausie_lib/stanford-parser-2.0.4-models.jar clausie_lib/jopt-simple-4.4.jar
+Main-Class: de.mpii.clausie.ClausIE
+
