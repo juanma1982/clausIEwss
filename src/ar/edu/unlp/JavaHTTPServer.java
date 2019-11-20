@@ -126,7 +126,7 @@ public class JavaHTTPServer implements Runnable{
 					//out.println("Content-length: " + fileLength);
 					out.println(); // blank line between headers and content, very important !
 				
-					out.println("Ilive");
+					out.println("alive");
 					//dataOut.write(fileData, 0, fileLength);
 					out.flush(); // flush character output stream buffer
 					dataOut.flush();
